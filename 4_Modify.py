@@ -36,4 +36,13 @@ The closest name is: Ryley
 names = ['Ryley', 'Edan', 'Reagan', 'Henry', 'Caius', 'Jane', 'Guto', 'Sonya', 'Tyrese', 'Johnny']
 index = int(input("Enter an index representing the name from the list you'd like to see!"))
 
-# Type your code here.
+try:
+    # Try to access the name at the given index
+    print(f"Name: {names[index]}")
+except IndexError as e:
+    # If an IndexError occurs, print the exception and handle the invalid index
+    print(f"Exception! {e}")
+    if index < 0:
+        print(f"The closest name is: {names[0]}")  # First element for negative index
+    else:
+        print(f"The closest name is: {names[-1]}")  # Last element for positive index
